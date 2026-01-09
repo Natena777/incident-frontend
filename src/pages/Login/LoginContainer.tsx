@@ -13,7 +13,7 @@ function LoginContainer() {
     e.preventDefault()
     setError('')
     try {
-      const response = await api.post('/auth/authenticate', { username, password })
+      const response = await api.post('/auth/login', { username, password })
       localStorage.setItem('token', response.data.token)
       navigate('/dashboard')
     } catch (err: any) {
